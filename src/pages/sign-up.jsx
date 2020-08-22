@@ -11,13 +11,8 @@ class SignUp extends Component {
         <h3>Sign Up</h3>
 
         <div className="form-group">
-            <label>First name</label>
-            <input type="text" className="form-control" placeholder="First name" />
-        </div>
-
-        <div className="form-group">
-            <label>Last name</label>
-            <input type="text" className="form-control" placeholder="Last name" />
+            <label>Name</label>
+            <input type="text" className="form-control" placeholder="Name" />
         </div>
 
         <div className="form-group">
