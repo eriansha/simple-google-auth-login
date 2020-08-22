@@ -8,7 +8,8 @@ class Home extends Component {
   render() {
     return(
       <div>
-        Home
+        Welcome to the Simple Login Application.
+        Created by  <a href="https://github.com/eriansha">@eriansha</a>
       </div>
     )
   }
