@@ -47,7 +47,7 @@ class Login extends Component {
           </div>
         </FormGroup>
         <p className="forgot-password text-right">
-            Forgot <a href="#">password?</a>
+            Forgot <a href="/">password?</a>
         </p>
       </Form>
     )
