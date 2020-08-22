@@ -11,7 +11,7 @@ export const AuthContext = createContext(defaultContext)
 
 export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [user, setUser] = useState(undefined)
+  // const [user, setUser] = useState(undefined)
 
   const onLogin = () => { setIsLoggedIn(true) }
 
@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
       value={{
         isLoggedIn,
         setIsLoggedIn,
-        user,
+        // user,
         onLogin,
         onLogout
       }}
