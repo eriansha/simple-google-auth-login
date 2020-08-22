@@ -1,17 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
+import { useAuth } from '../context/auth'
 
-class Profile extends Component {
-  constructor(props) {
-    super()
-  }
+function Profile(props) {
 
-  render() {
-    return(
-      <div>
-        Welcome, You just success to login!
-      </div>
-    )
-  }
+  return(
+    <div>
+      Welcome, You just success to login!
+    </div>
+  )
 }
 
-export default Profile;
+export default Profile
