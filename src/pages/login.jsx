@@ -6,7 +6,7 @@ import { Button, Form, FormGroup, Label, Input, Card, CardBody } from 'reactstra
 import GoogleLogin from 'react-google-login';
 
 function Login(props) {
-  const { isLoggedIn, setIsLoggedIn } = useAuth();
+  const { isLoggedIn, onLogin } = useAuth();
 
   const handleSuccessGoogle = () => {
 
@@ -16,8 +16,8 @@ function Login(props) {
     
   }
 
-  const onLogin = () => {
-    setIsLoggedIn(true)
+  const handlLogin = () => {
+    onLogin()
   }
 
   if (isLoggedIn) {
@@ -46,7 +46,7 @@ function Login(props) {
             block
             color="primary"
             size="md"
-            onClick={onLogin}
+            onClick={handlLogin}
           >
             Submit
           </Button>

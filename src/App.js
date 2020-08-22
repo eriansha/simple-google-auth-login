@@ -10,10 +10,10 @@ import SignUp from './pages/sign-up'
 import Home from './pages/home'
 import Profile from './pages/profile'
 
-import { AuthContext, useAuth } from './context/auth'
+import { AuthProvider, useAuth } from './context/auth'
 
 function App(props) {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { isLoggedIn, onLogout } = useAuth()
 
   const unauthenticatedNav = () => {
     return(
@@ -32,21 +32,23 @@ function App(props) {
     return(
       <>
         <NavItem>
-          <NavLink href="#" onClick={logOut}>Logout</NavLink>
+          <NavLink href="#" onClick={handleLogOut}>Logout</NavLink>
         </NavItem>
       </>
     )
   }
 
-  const logOut = () => {
-    setIsLoggedIn(false)
+  const handleLogOut = () => {
+    onLogout()
 
     return <Redirect to="/sign-in" />
   }
 
+  console.log(isLoggedIn)
+
   return (
-    <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
-      <Router>
+    <Router>
+      <AuthProvider>
         <div className="App">
           <Navbar color="faded" light>
             <NavbarBrand href="/">React Login</NavbarBrand>
@@ -68,8 +70,8 @@ function App(props) {
             </div>
           </div>
         </div>
-      </Router>
-    </AuthContext.Provider>
+      </AuthProvider>
+    </Router>
   );
 }
 
