@@ -1,30 +1,28 @@
 import React, { Component } from "react";
+import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './App.css';
 
 import Login from './pages/login'
 import SignUp from './pages/sign-up'
+import Home from './pages/home'
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <nav className="navbar navbar-expand-lg navbar-light fixed-top">
-          <div className="container">
-            <Link className="navbar-brand" to={"/sign-in"}>React Login</Link>
-            <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-              <ul className="navbar-nav ml-auto">
-                <li className="nav-item">
-                  <Link className="nav-link" to={"/sign-in"}>Login</Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to={"/sign-up"}>Sign up</Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+        <Navbar color="faded" light>
+          <NavbarBrand href="/">React Login</NavbarBrand>
+          <Nav right>
+            <NavItem>
+              <NavLink href="/sign-in">Sign In</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/sign-up">Sign Up</NavLink>
+            </NavItem>
+          </Nav>
+        </Navbar>
 
         <div className="auth-wrapper">
           <div className="auth-inner">
@@ -32,6 +30,7 @@ function App() {
               <Route exact path='/' component={Login} />
               <Route path="/sign-in" component={Login} />
               <Route path="/sign-up" component={SignUp} />
+              <Route path="/home" component={Home} />
             </Switch>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import GoogleLogin from 'react-google-login';
 
 class Login extends Component {
@@ -16,44 +17,39 @@ class Login extends Component {
 
   render() {
     return(
-      <form>
+      <Form>
         <h3>Sign In</h3>
-
-        <div className="form-group">
-            <label>Email address</label>
-            <input type="email" className="form-control" placeholder="Enter email" />
-        </div>
-
-        <div className="form-group">
-            <label>Password</label>
-            <input type="password" className="form-control" placeholder="Enter password" />
-        </div>
-
-        <div className="form-group">
-            <div className="custom-control custom-checkbox">
-                <input type="checkbox" className="custom-control-input" id="customCheck1" />
-                <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
-            </div>
-        </div>
-
-        <button type="submit" className="btn btn-primary btn-block">Submit</button>
-          <div className="form-group">
-            <div className="google-login">
-              <h6>Or</h6>
-              <GoogleLogin            
-                clientId={"658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"}
-                responseType={'id_token'}
-                buttonText="Login by Google"
-                onSuccess={this.handleSuccessGoogle}
-                onFailure={this.handleFailedGoogle}
-                cookiePolicy={'single_host_origin'}
-              />
-            </div>
+        <FormGroup>
+          <Label for="email">Email address</Label>
+          <Input type="email" name="email" id="email" placeholder="Enter Email" autoFocus />
+        </FormGroup>
+        <FormGroup>
+          <Label for="password">Password</Label>
+          <Input type="password" name="password" id="password" placeholder="Enter Password" />
+        </FormGroup>
+        <FormGroup check>
+          <Label style={{ fontWeight: 'normal', marginBottom: '20px' }} check>
+            <Input type="checkbox" /> Remember me
+          </Label>
+        </FormGroup>
+        <Button color="primary" size="md" block>Submit</Button>
+        <FormGroup>
+          <div className="google-login">
+            <h6>Or</h6>
+            <GoogleLogin            
+              clientId={"658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"}
+              responseType={'id_token'}
+              buttonText="Login by Google"
+              onSuccess={this.handleSuccessGoogle}
+              onFailure={this.handleFailedGoogle}
+              cookiePolicy={'single_host_origin'}
+            />
           </div>
+        </FormGroup>
         <p className="forgot-password text-right">
             Forgot <a href="#">password?</a>
         </p>
-      </form>
+      </Form>
     )
   }
 }

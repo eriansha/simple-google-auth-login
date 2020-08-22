@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 class SignUp extends Component {
   constructor(props) {
@@ -7,29 +8,29 @@ class SignUp extends Component {
 
   render() {
     return(
-      <form>
+      <Form>
         <h3>Sign Up</h3>
-
-        <div className="form-group">
-            <label>Name</label>
-            <input type="text" className="form-control" placeholder="Name" />
-        </div>
-
-        <div className="form-group">
-            <label>Email address</label>
-            <input type="email" className="form-control" placeholder="Enter email" />
-        </div>
-
-        <div className="form-group">
-            <label>Password</label>
-            <input type="password" className="form-control" placeholder="Enter password" />
-        </div>
-
-        <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
+        <FormGroup>
+          <Label for="name">Name</Label>
+          <Input type="text" name="name" id="exampleEmail" placeholder="Enter name" autoFocus/>
+        </FormGroup>
+        <FormGroup>
+          <Label for="email">Email address</Label>
+          <Input type="email" name="email" id="email" placeholder="Enter Email" />
+        </FormGroup>
+        <FormGroup>
+          <Label for="password">Password</Label>
+          <Input type="password" name="password" id="password" placeholder="Enter Password" />
+        </FormGroup>
+        <FormGroup>
+          <Label for="passwordConfirmation">Password Confirmation</Label>
+          <Input type="password" name="passwordConfirmation" id="passwordConfirmation" placeholder="Enter Password" />
+        </FormGroup>
+        <Button color="primary" size="md" block>Submit</Button>
         <p className="forgot-password text-right">
-            Already registered <a href="#">sign in?</a>
+            Already registered <a href="/">sign in?</a>
         </p>
-      </form>
+      </Form>
     )
   }
 }
