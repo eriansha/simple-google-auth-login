@@ -29,8 +29,8 @@ class SignUp extends Component {
               <Input type="password" name="passwordConfirmation" id="passwordConfirmation" placeholder="Enter Password" />
             </FormGroup>
             <Button color="primary" size="md" block>Submit</Button>
-            <p className="forgot-password text-right">
-                Already registered <a href="/sign-in">sign in?</a>
+            <p className="redirect-note text-right">
+                Already registered? <a href="/sign-in">sign in</a>
             </p>
           </Form>
         </CardBody>

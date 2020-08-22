@@ -57,8 +57,8 @@ body, html, .App, #root, .auth-wrapper {
   font-weight: 400;
 }
 
-.forgot-password,
-.forgot-password a {
+.redirect-note,
+.redirect-note a {
   text-align: right;
   font-size: 13px;
   padding-top: 10px;
@@ -66,6 +66,6 @@ body, html, .App, #root, .auth-wrapper {
   margin: 0;
 }
 
-.forgot-password a {
+.redirect-note a {
   color: #167bff;
 }

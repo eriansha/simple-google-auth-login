@@ -50,7 +50,7 @@ class Login extends Component {
                 <Link style={{ marginTop: '20px' }} to="/">Forget Password?</Link>
               </div>
             </FormGroup>
-            <p className="forgot-password text-right">
+            <p className="redirect-note text-right">
                 {/* Forgot <a href="/">password?</a> */}
                 Dont have account? <Link to="/sign-up">Sign Up</Link>
             </p>
