@@ -51,8 +51,7 @@ class Login extends Component {
               </div>
             </FormGroup>
             <p className="redirect-note text-right">
-                {/* Forgot <a href="/">password?</a> */}
-                Dont have account? <Link to="/sign-up">Sign Up</Link>
+                <Link to="/sign-up">Already have an account?</Link>
             </p>
           </Form>
         </CardBody>
