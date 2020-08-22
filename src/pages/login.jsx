@@ -1,9 +1,12 @@
-import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link, Redirect } from 'react-router-dom';
+import { useAuth } from "../context/auth";
+
 import { Button, Form, FormGroup, Label, Input, Card, CardBody } from 'reactstrap';
 import GoogleLogin from 'react-google-login';
 
 function Login(props) {
+  const { isLoggedIn, setIsLoggedIn } = useAuth();
 
   const handleSuccessGoogle = () => {
 
@@ -11,6 +14,14 @@ function Login(props) {
 
   const handleFailedGoogle = () => {
     
+  }
+
+  const onLogin = () => {
+    setIsLoggedIn(true)
+  }
+
+  if (isLoggedIn) {
+    return <Redirect to="/profile" />;
   }
 
   return(
@@ -31,7 +42,14 @@ function Login(props) {
               <Input type="checkbox" /> Remember me
             </Label>
           </FormGroup>
-          <Button color="primary" size="md" block>Submit</Button>
+          <Button 
+            block
+            color="primary"
+            size="md"
+            onClick={onLogin}
+          >
+            Submit
+          </Button>
           <FormGroup>
             <div className="google-login">
               <h6>Or</h6>
