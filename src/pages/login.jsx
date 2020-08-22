@@ -1,8 +1,17 @@
 import React, { Component } from "react";
+import GoogleLogin from 'react-google-login';
 
 class Login extends Component {
   constructor(props) {
     super()
+  }
+
+  handleSuccessGoogle = () => {
+
+  }
+
+  handleFailedGoogle = () => {
+    
   }
 
   render() {
@@ -28,6 +37,19 @@ class Login extends Component {
         </div>
 
         <button type="submit" className="btn btn-primary btn-block">Submit</button>
+          <div className="form-group">
+            <div className="google-login">
+              <h6>Or</h6>
+              <GoogleLogin            
+                clientId={"658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"}
+                responseType={'id_token'}
+                buttonText="Login by Google"
+                onSuccess={this.handleSuccessGoogle}
+                onFailure={this.handleFailedGoogle}
+                cookiePolicy={'single_host_origin'}
+              />
+            </div>
+          </div>
         <p className="forgot-password text-right">
             Forgot <a href="#">password?</a>
         </p>
