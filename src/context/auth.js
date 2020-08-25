@@ -1,8 +1,9 @@
 import React, { createContext, useContext, useState } from 'react'
+import AuthService from '../services/auth-service'
 
 const defaultContext = {
   isLoggedIn    : false,
-  customer      : {},
+  user          : {},
   onLogin       : () => {},
   onLogout      : () => {}
 }
@@ -10,21 +11,25 @@ const defaultContext = {
 export const AuthContext = createContext(defaultContext)
 
 export const AuthProvider = ({ children }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
-  // const [user, setUser] = useState(undefined)
+  const [isLoggedIn, setLoggedIn] = useState(false)
 
-  const onLogin = () => { setIsLoggedIn(true) }
+  const onLogin = () => { 
+    setLoggedIn(true)
+    AuthService.login()
+  }
 
-  const onLogout = () => { setIsLoggedIn(false) }
+  const onLogout = () => { 
+    setLoggedIn(false)
+    AuthService.logout()
+  }
 
   return (
     <AuthContext.Provider
       value={{
-        isLoggedIn,
-        setIsLoggedIn,
         // user,
         onLogin,
-        onLogout
+        onLogout,
+        isLoggedIn
       }}
     >
       { children }
