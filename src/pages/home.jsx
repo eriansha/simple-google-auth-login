@@ -1,18 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Home extends Component {
-  constructor(props) {
-    super()
-  }
+function Home(props)  {
 
-  render() {
-    return(
-      <div>
-        Welcome to the Simple Login Application.
-        Created by  <a href="https://github.com/eriansha">@eriansha</a>
-      </div>
-    )
-  }
+  return(
+    <div>
+      Welcome to the Simple Login Application.
+      Created by  <a href="https://github.com/eriansha">@eriansha</a>
+    </div>
+  )
 }
 
 export default Home;
